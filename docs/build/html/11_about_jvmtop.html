@@ -1,0 +1,164 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>4. jvmtop이란 ? &#8212; jvmtop  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="색인" href="genindex.html" />
+    <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="5. jvmtop 실행" href="12_run_jvmtop.html" />
+    <link rel="prev" title="3. 애플리케이션 실행 및 CPU 사용량 확인" href="03_application_start.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="jvmtop">
+<h1>4. jvmtop이란 ?<a class="headerlink" href="#jvmtop" title="제목 주소">¶</a></h1>
+<div class="section" id="id1">
+<h2>4.1. 개요<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
+<ul class="simple">
+<li>jvmtop 은 커맨드 라인 명령어로 간단하게 자바 프로세스의 CPU 상태를 모니터링할 수 있는 도구이다</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>4.2. 특징<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>jvmtop 에서 측정할 수 있는 주요 상태는 다음과 같다.</dt>
+<dd><ul class="first last">
+<li>프로세스별 CPU 사용량</li>
+<li>쓰레드별 CPU 사용량</li>
+<li>메소드별 CPU 사용량</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>4.3. 다운로드하기<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<ul class="simple">
+<li>아래의 URL 에 접속하여 release 탭을 누른 후 jvmtop-0.8.0.tar.gz 를 클릭하여 파일을 다운로드 한다.</li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://github.com/patric-r/jvmtop
+</pre></div>
+</div>
+<ul class="simple">
+<li>만약 별도의 서버에서 다운로드를하려면,</li>
+</ul>
+<ol class="arabic simple">
+<li>파일의 다운로드 링크를 복사 한 후,</li>
+<li>wget 명령어로 파일을 다운로드 하고,</li>
+<li>압축을 해제하면 된다.</li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> tar zxvf jvmtop-0.8.0.tar.gz
+<span class="go">jvmtop.jar</span>
+<span class="go">INSTALL</span>
+<span class="go">jvmtop.bat</span>
+<span class="go">jvmtop.sh</span>
+<span class="gp">$</span> chmod <span class="m">755</span> jvmtop.sh
+<span class="gp">$</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>jvmtop 압축 해제된 디렉터리로 이동하면, 실행파일들과 jar 파일이 존재하는지 확인한다.</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>4.4. jvmtop 사용시 유의점<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
+<ul class="simple">
+<li>jvmtop 은 JVM 에 붙어서(attach) 사용하는 프로그램이기 때문에, jvmtop 을 수행한 서버 사용자 계정과 분석하고자하는 프로세스를 실행시킨 계정이 동일해야만 한다.</li>
+<li>jvmtop 으로 모니터링할 때에는 CPU 사용량이 증가하기 때문에, jvmtop을 CPU 리소스가 부족한 상황에서 사용하면 안된다.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">jvmtop</a></h1>
+
+
+
+
+
+
+
+
+<h3>탐색</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">1. 개요</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_cpu_check.html">2. 프로세스 CPU 사용량 확인하기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_application_start.html">3. 애플리케이션 실행 및 CPU 사용량 확인</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. jvmtop이란 ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_run_jvmtop.html">5. jvmtop 실행</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="03_application_start.html" title="이전 장">3. 애플리케이션 실행 및 CPU 사용량 확인</a></li>
+      <li>Next: <a href="12_run_jvmtop.html" title="다음 장">5. jvmtop 실행</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="바로 가기" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, NHN Entertainment.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/11_about_jvmtop.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
