@@ -72,15 +72,16 @@ jvmtop.sh 실행
 .. code-block:: console
 
     $ ./jvmtop.sh --profile 2943
-     JvmTop 0.8.0 alpha - 14:13:51,  amd64,  4 cpus, Linux 2.6.32-64, load avg 0.20
-     http://code.google.com/p/jvmtop
+        JvmTop 0.8.0 alpha - 12:01:52, x86_64,  8 cpus, Mac OS X 10.12., load avg 6.65
+        http://code.google.com/p/jvmtop
 
-     Profiling PID 2943: org.apache.catalina.startup.Bootstrap st
+        Profiling PID 77177:               com.nhnent.CpuConsumerMain
 
-      52.98% (     0.37s) ....google.api.client.http.apache.ApacheHttpRequest.exec()
-      26.15% (     0.18s) ...qos.logback.core.recovery.ResilientOutputStreamBase.f()
-      11.84% (     0.08s) ch.qos.logback.classic.spi.CallerData.extract()
-       7.01% (     0.05s) ....google.api.client.http.apache.ApacheHttpTransport.ne()
-       2.02% (     0.01s) org.springframework.util.StreamUtils.copy()
+        79.43% (    11.52s) com.nhnent.cpu.InfiniteLoop.busyMethod()
+         7.71% (     1.12s) ....fasterxml.jackson.databind.util.ClassUtil.getEnclosi()
+         5.04% (     0.73s) ....fasterxml.jackson.databind.util.ClassUtil.hasEnclosi()
+         1.11% (     0.16s) ....fasterxml.jackson.databind.introspect.AnnotatedMetho()
+         0.88% (     0.13s) ....fasterxml.jackson.databind.ser.impl.ReadOnlyClassToS()
+         0.61% (     0.09s) ....fasterxml.jackson.databind.util.ClassUtil.getDeclare()
 
 * 어떤 메소드가 가장 CPU 를 많이 점유했는지 확인이 가능하다.

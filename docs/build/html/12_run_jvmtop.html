@@ -16,6 +16,7 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="색인" href="genindex.html" />
     <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="6. 정리" href="99_summary.html" />
     <link rel="prev" title="4. jvmtop이란 ?" href="11_about_jvmtop.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -101,16 +102,17 @@
 <li>프로세스의 CPU 를 점유하는 메소드를 모니터링하고 싶으면 --profile 옵션과 함께 pid(프로세스id)를 명시해 주면 된다</li>
 </ul>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ./jvmtop.sh --profile <span class="m">2943</span>
-<span class="go"> JvmTop 0.8.0 alpha - 14:13:51,  amd64,  4 cpus, Linux 2.6.32-64, load avg 0.20</span>
-<span class="go"> http://code.google.com/p/jvmtop</span>
+<span class="go">    JvmTop 0.8.0 alpha - 12:01:52, x86_64,  8 cpus, Mac OS X 10.12., load avg 6.65</span>
+<span class="go">    http://code.google.com/p/jvmtop</span>
 
-<span class="go"> Profiling PID 2943: org.apache.catalina.startup.Bootstrap st</span>
+<span class="go">    Profiling PID 77177:               com.nhnent.CpuConsumerMain</span>
 
-<span class="go">  52.98% (     0.37s) ....google.api.client.http.apache.ApacheHttpRequest.exec()</span>
-<span class="go">  26.15% (     0.18s) ...qos.logback.core.recovery.ResilientOutputStreamBase.f()</span>
-<span class="go">  11.84% (     0.08s) ch.qos.logback.classic.spi.CallerData.extract()</span>
-<span class="go">   7.01% (     0.05s) ....google.api.client.http.apache.ApacheHttpTransport.ne()</span>
-<span class="go">   2.02% (     0.01s) org.springframework.util.StreamUtils.copy()</span>
+<span class="go">    79.43% (    11.52s) com.nhnent.cpu.InfiniteLoop.busyMethod()</span>
+<span class="go">     7.71% (     1.12s) ....fasterxml.jackson.databind.util.ClassUtil.getEnclosi()</span>
+<span class="go">     5.04% (     0.73s) ....fasterxml.jackson.databind.util.ClassUtil.hasEnclosi()</span>
+<span class="go">     1.11% (     0.16s) ....fasterxml.jackson.databind.introspect.AnnotatedMetho()</span>
+<span class="go">     0.88% (     0.13s) ....fasterxml.jackson.databind.ser.impl.ReadOnlyClassToS()</span>
+<span class="go">     0.61% (     0.09s) ....fasterxml.jackson.databind.util.ClassUtil.getDeclare()</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -142,6 +144,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03_application_start.html">3. 애플리케이션 실행 및 CPU 사용량 확인</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_about_jvmtop.html">4. jvmtop이란 ?</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. jvmtop 실행</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99_summary.html">6. 정리</a></li>
 </ul>
 
 <div class="relations">
@@ -149,6 +152,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="11_about_jvmtop.html" title="이전 장">4. jvmtop이란 ?</a></li>
+      <li>Next: <a href="99_summary.html" title="다음 장">6. 정리</a></li>
   </ul></li>
 </ul>
 </div>
