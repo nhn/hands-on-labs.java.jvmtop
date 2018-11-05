@@ -7,7 +7,7 @@ pip3 install --upgrade pip setuptools wheel
 pip install sphinx sphinx-autobuild
 
 ## build
-move to docs dir.
+move to site dir.
 
 ```
 make html

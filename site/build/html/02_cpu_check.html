@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2. 프로세스 CPU 사용량 확인하기 &#8212; jvmtop  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="색인" href="genindex.html" />
+    <link rel="search" title="검색" href="search.html" />
+    <link rel="next" title="3. 애플리케이션 실행 및 CPU 사용량 확인" href="03_application_start.html" />
+    <link rel="prev" title="1. 개요" href="01_intro.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cpu">
+<h1>2. 프로세스 CPU 사용량 확인하기<a class="headerlink" href="#cpu" title="제목 주소">¶</a></h1>
+<div class="section" id="id1">
+<h2>2.1. 장비의 CPU 사용량 확인<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
+<p>linux 의 주요 CPU 모니터링 명령어들</p>
+<ul class="simple">
+<li>vmstat</li>
+<li>pidstat</li>
+<li>sar</li>
+<li>top</li>
+</ul>
+</div>
+<div class="section" id="vmstat-cpu">
+<h2>2.2. vmstat로 CPU 사용량 확인 (리눅스에서 실행시 확인, 윈도우에서 실행할 경우 스킵할 것 !)<a class="headerlink" href="#vmstat-cpu" title="제목 주소">¶</a></h2>
+<ol class="arabic simple">
+<li>터미널 화면을 띄운다</li>
+<li>다음과 같이 vmstat 명령어를 실행하여 결과를 확인해 본다</li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> vmstat <span class="m">5</span>
+<span class="go">procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----</span>
+<span class="go"> r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st</span>
+<span class="go"> 0  0 689820 859516 231196 7398616    0    0     0     0    0    0  0  0 100  0  0</span>
+<span class="go"> 0  0 689820 855364 231196 7398628    0    0     0    18 3384 4577  0  0 100  0  0</span>
+<span class="go"> 0  0 689820 855380 231196 7398636    0    0     0    35 3303 4652  0  0 100  0  0</span>
+</pre></div>
+</div>
+<p>(여기서 우측의 5개 열에 있는 0,0,100,0,0 에 주목해야 한다)</p>
+<ol class="arabic simple" start="3">
+<li>CPU 관련 데이터만 따로 보면</li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> vmstat <span class="m">5</span>
+<span class="go">-----cpu-----</span>
+<span class="go">us sy id wa st</span>
+<span class="go">0  0 100  0  0</span>
+<span class="go">0  0 100  0  0</span>
+<span class="go">0  0 100  0  0</span>
+</pre></div>
+</div>
+<p>User CPU 와 System CPU 값이 모두 0으로 매우 낮은지를 확인한다
+(실습 CPU 의 상황에 따라서 이 값은 충분히 다를 수 있다)</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">jvmtop</a></h1>
+
+
+
+
+
+
+
+
+<h3>탐색</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01_intro.html">1. 개요</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. 프로세스 CPU 사용량 확인하기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_application_start.html">3. 애플리케이션 실행 및 CPU 사용량 확인</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_about_jvmtop.html">4. jvmtop이란 ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_run_jvmtop.html">5. jvmtop 실행</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99_summary.html">6. 정리</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="01_intro.html" title="이전 장">1. 개요</a></li>
+      <li>Next: <a href="03_application_start.html" title="다음 장">3. 애플리케이션 실행 및 CPU 사용량 확인</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>빠른 검색</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="바로 가기" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, NHN Entertainment.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      
+      |
+      <a href="_sources/02_cpu_check.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
