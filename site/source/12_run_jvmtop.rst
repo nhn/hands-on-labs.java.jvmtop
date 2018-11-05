@@ -3,6 +3,13 @@ jvmtop 실행
 ************
 
 
+실습용 Application 실행 - 1
+==================================
+
+1. 파일 탐색기에서 C:\\nhn_forward_lab\\jvmtop 으로 이동하여 start_lock.bat 파일을 더블클릭하여 자바 애플리케이션을 띄운다.
+
+
+
 jvmtop.sh 실행
 ==================
 
@@ -11,9 +18,13 @@ jvmtop.sh 실행
 
 단, 해당 사용자 계정에 JAVA_HOME 값이 설정되어 있어야만 정상적으로 수행한다.
 
+1. 커맨드 창을 새로 열어서 C:\\nhn_forward_lab\\jvmtop\\jvmtop-0.9.0-SNAPSHOT 으로 이동한다.
+
+2. jvmtop 을 실행한다.
+
 .. code-block:: console
 
-    $ ./jvmtop.sh
+    $ ./jvmtop.bat
      JvmTop 0.8.0 alpha - 12:20:51,  amd64,  4 cpus, Linux 2.6.32-64, load avg 0.00
      http://code.google.com/p/jvmtop
     
@@ -33,11 +44,14 @@ jvmtop.sh 실행
 프로세스의 쓰레드 모니터링
 ======================================
 
+
+1. jvmtop.bat <pid> 로 명령을 실행한다.
+
 * 프로세스의 CPU를 점유하는 쓰레드를 모니터링하고 싶으면, jvmtop 의 명령어 가장 뒤에 pid(프로세스id)를 명시해 주면 된다
 
 .. code-block:: console
 
-    $ ./jvmtop.sh 2943
+    $ ./jvmtop.bat 2943
      JvmTop 0.8.0 alpha - 12:33:40,  amd64,  4 cpus, Linux 2.6.32-64, load avg 0.00
      http://code.google.com/p/jvmtop
 
@@ -63,16 +77,25 @@ jvmtop.sh 실행
 
 * 어떤 쓰레드가 CPU 를 가장 많이 사용하고 있는지 확인이 가능하다.
 
+실습용 Application 실행 - 2
+==================================
+
+1. 현재 실행중인 실습용 애플리케이션 커맨드 창을 닫는다.
+
+2. 파일 탐색기에서 C:\\nhn_forward_lab\\jvmtop 으로 이동하여 start_cpu.bat 파일을 더블클릭하여 자바 애플리케이션을 띄운다.
 
 프로세스의 메소드 모니터링
 ======================================
 
+1. jvmtop 을 실행하여 새로 실행한 애플리케이션의 pid 를 확인한다.
+
+2. jvmtop.bat --profile <pid> 실행
 
 * 프로세스의 CPU 를 점유하는 메소드를 모니터링하고 싶으면 --profile 옵션과 함께 pid(프로세스id)를 명시해 주면 된다
 
 .. code-block:: console
 
-    $ ./jvmtop.sh --profile 2943
+    $ ./jvmtop.bat --profile 2943
         JvmTop 0.8.0 alpha - 12:01:52, x86_64,  8 cpus, Mac OS X 10.12., load avg 6.65
         http://code.google.com/p/jvmtop
 
@@ -86,3 +109,8 @@ jvmtop.sh 실행
          0.61% (     0.09s) ....fasterxml.jackson.databind.util.ClassUtil.getDeclare()
 
 * 어떤 메소드가 가장 CPU 를 많이 점유했는지 확인이 가능하다.
+
+실습용 Application 종료 - 3
+==================================
+
+1. 현재 실행중인 실습용 애플리케이션 커맨드 창을 닫는다.

@@ -39,10 +39,12 @@
 <p>JVM 의 CPU 사용량이 높을 때 분석하는 원인을 분석하는 방법에 대해서 알아봅니다</p>
 <div class="section" id="id1">
 <h2>3.1. 자바 프로세스 실행<a class="headerlink" href="#id1" title="제목 주소">¶</a></h2>
-<p>1. 파일 탐색기에서 C:nhn_forward_labjvmtop 으로 이동하여 start_lock.bat 파일을 더블클릭하여 자바 애플리케이션을 띄운다.
-.. code-block:: console</p>
-<blockquote>
-<div>Started Lock threads</div></blockquote>
+<ol class="arabic simple">
+<li>파일 탐색기에서 C:\nhn_forward_lab\jvmtop 으로 이동하여 start_lock.bat 파일을 더블클릭하여 자바 애플리케이션을 띄운다.</li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Started Lock threads</span>
+</pre></div>
+</div>
 <ol class="arabic simple" start="2">
 <li>jps 명령어를 사용하여 프로세스가 정상적으로 동작 중인지 확인한다.</li>
 </ol>
@@ -50,6 +52,9 @@
 <span class="go">14894 jar</span>
 </pre></div>
 </div>
+<ol class="arabic simple" start="3">
+<li>실행이 확인 되었으면 커맨드 창을 닫아 프로세스를 종료한다.</li>
+</ol>
 </div>
 <div class="section" id="id2">
 <h2>3.2. 프로세스 별 CPU 사용량 확인 (리눅스에서 실행시 확인, 윈도우에서 실행할 경우 스킵할 것 !)<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
